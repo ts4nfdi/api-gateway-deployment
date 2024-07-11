@@ -1,0 +1,6 @@
+ingress:
+  dns: 
+  enableSSL:
+  certIssuer:
+images:
+  frontend: ghcr.io/ts4nfdi/api-gateway:latest
