@@ -14,5 +14,11 @@ spec:
       containers:
       - name: api-gateway
         image: {{ .Values.images.frontend }}
+        env:
+          - name: ONTOPORTAL_APIKEY
+            valueFrom:
+              secretKeyRef:
+                name: ontoportal-secret
+                key: ONTOPORTAL_APIKEY
         ports:
           - containerPort: 8080
