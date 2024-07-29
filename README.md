@@ -1,11 +1,14 @@
 # api-gateway-deployment
-Kubernetes deployment scripts of the API Gateway
+Kubernetes deployment scripts of the TS4NFDI API Gateway
 
 ## Installation
 ```shell
 helm install test \
---set-json='ingress.dns="test.ts4nfdi"'  \
+--namespace='ts4nfdi' \
+--set-json='ingress.dns="ts4nfdi-api-gateway.prod.km.k8s.zbmed.de"'  \
 --set-json='images.frontend="ghcr.io/ts4nfdi/api-gateway:latest"'  \
+--set-json='ingress.enableSSL="true"'  \
+--set-json='ingress.certIssuer="letsencrypt-prod"'  \
 /path-to/api-gateway-deployment/k8s/api-gateway/
 ```
 
