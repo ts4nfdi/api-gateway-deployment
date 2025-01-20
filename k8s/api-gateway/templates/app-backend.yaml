@@ -20,5 +20,14 @@ spec:
               secretKeyRef:
                 name: ontoportal-secret
                 key: ONTOPORTAL_APIKEY
+          - name: SPRING_DATASOURCE_URL
+            value: jdbc:postgresql://{{ .Release.Name }}-postgresql:5432/{{ .Values.postgres.database }}
+          - name: SPRING_DATASOURCE_USERNAME
+            value: {{ .Values.postgres.username }}
+          - name: SPRING_DATASOURCE_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: db-secret
+                key: DB_PASSWORD
         ports:
           - containerPort: 8080
