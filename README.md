@@ -1,5 +1,5 @@
 # api-gateway-deployment
-Kubernetes deployment scripts of the TS4NFDI API Gateway
+Kubernetes deployment scripts of the [TS4NFDI API Gateway](https://github.com/ts4nfdi/api-gateway)
 
 ## Installation
 ```shell
