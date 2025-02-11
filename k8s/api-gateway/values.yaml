@@ -3,4 +3,14 @@ ingress:
   enableSSL:
   certIssuer:
 images:
-  frontend:
+  frontend: syphax0/api-gateway:develop
+
+service:
+  type: ClusterIP
+  port: 8443
+
+postgres:
+  storage: 1Gi
+  database: db
+  username: admin
+  password: changeme
