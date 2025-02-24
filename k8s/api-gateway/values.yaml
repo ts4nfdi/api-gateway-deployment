@@ -5,12 +5,16 @@ ingress:
 images:
   frontend: syphax0/api-gateway:develop
 
+gateway:
+  admin_password: changeme
+  jwt_secret: changeme
+
 service:
   type: ClusterIP
   port: 8443
 
 postgres:
   storage: 1Gi
-  database: db
+  database: gateway
   username: admin
   password: changeme
