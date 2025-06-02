@@ -23,7 +23,7 @@ spec:
     - host: {{ .Values.ingress.dns }}
       http:
         paths:
-        - path: /
+        - path: /api-gateway
           pathType: Prefix
           backend:
             service:
