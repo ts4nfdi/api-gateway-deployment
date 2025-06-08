@@ -1,17 +1,16 @@
 {{- if .Values.ingress.dns }}
-  {{- $relname := .Release.Name -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ .Release.Name }}-ingress
   annotations:
-    nginx.ingress.kubernetes.io/permanent-redirect: https://{{ .Values.ingress.dns }}/api-gateway
+    nginx.ingress.kubernetes.io/permanent-redirect: https://{{ .Values.ingress.dns }}/api-gateway$request_uri
 spec:
   rules:
     - host: {{ .Values.ingress.dnsAlias }}
       http:
         paths:
-          - path: /api-gateway
+          - path: /api-gateway(/|$)(.*)
             pathType: Prefix
             backend:
               service:
