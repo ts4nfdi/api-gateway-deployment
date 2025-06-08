@@ -4,7 +4,7 @@ kind: Ingress
 metadata:
   name: {{ .Release.Name }}-ingress
   annotations:
-    nginx.ingress.kubernetes.io/permanent-redirect: https://{{ .Values.ingress.dns }}/api-gateway$request_uri
+    nginx.ingress.kubernetes.io/permanent-redirect: "https://{{ .Values.ingress.dns }}/api-gateway\\$request_uri"
 spec:
   rules:
     - host: {{ .Values.ingress.dnsAlias }}
