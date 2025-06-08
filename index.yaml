@@ -3,6 +3,16 @@ entries:
   api-gateway:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2025-06-08T01:15:33.96397045Z"
+    description: A Helm chart to deploy the api-gateway.
+    digest: 7af456032436a6e46c0a68993fbd6b56c2dee73ab53cda955385be8211cc95ce
+    name: api-gateway
+    type: application
+    urls:
+    - https://github.com/ts4nfdi/api-gateway-deployment/releases/download/api-gateway-0.0.21/api-gateway-0.0.21.tgz
+    version: 0.0.21
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2025-06-08T01:00:52.949931879Z"
     description: A Helm chart to deploy the api-gateway.
     digest: cae67f7fc05ea549002a3cb801ca57a0c71b27fbacd7a562f2b406253a5b83c4
@@ -121,4 +131,4 @@ entries:
     urls:
     - https://github.com/ts4nfdi/api-gateway-deployment/releases/download/api-gateway-0.0.1/api-gateway-0.0.1.tgz
     version: 0.0.1
-generated: "2025-06-08T01:00:52.949989727Z"
+generated: "2025-06-08T01:15:33.964241852Z"
