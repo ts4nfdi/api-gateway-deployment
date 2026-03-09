@@ -3,6 +3,12 @@ kind: postgresql
 metadata:
   name: {{ .Release.Name }}-postgres
   namespace: {{ .Release.Namespace }}
+  labels:
+    project: ts4nfdi
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/part-of: ts4nfdi-gateway
+    app.kubernetes.io/component: backend
+    app.kubernetes.io/managed-by: Helm
 spec:
   teamId: "{{ .Release.Name }}"
   volume:
