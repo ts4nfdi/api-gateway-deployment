@@ -12,7 +12,7 @@ metadata:
 spec:
   teamId: "{{ .Release.Name }}"
   volume:
-    size: 1Gi
+    size: 10Gi
   numberOfInstances: 2
   resources:
     requests:
