@@ -16,8 +16,10 @@ spec:
   numberOfInstances: 2
   resources:
     requests:
-      cpu: 50m
-      memory: 100Mi
+      cpu: 250m
+      memory: 512Mi
+    limits:
+      memory: 1Gi
   users:
     gateway:  # Ensure user is correctly defined
       - superuser
