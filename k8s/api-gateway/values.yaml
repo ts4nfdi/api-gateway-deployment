@@ -8,16 +8,16 @@ images:
   backend:
   frontend:
 
-gateway:
-  admin_password: changeme
-  jwt_secret: changeme
-
 service:
   type: ClusterIP
   port: 8443
 
 postgres:
-  storage: 1Gi
   database: gateway
   username: admin
   password: changeme
+  volume_size: "2Gi"
+  number_instances_postgres: 1
+  logical_backup: false
+
+number_instances_backend: 1

@@ -2,21 +2,23 @@ apiVersion: "acid.zalan.do/v1"
 kind: postgresql
 metadata:
   name: {{ .Release.Name }}-postgres
+  annotations:
+    "acid.zalan.do/controller": "ts4nfdi-operator"
   namespace: {{ .Release.Namespace }}
   labels:
     project: ts4nfdi
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/part-of: ts4nfdi-gateway
-    app.kubernetes.io/component: backend
+    app.kubernetes.io/component: db
     app.kubernetes.io/managed-by: Helm
 spec:
-  teamId: "{{ .Release.Name }}"
+  enableLogicalBackup: {{ .Values.postgres.logical_backup }}
+  teamId: {{ .Release.Name }}
   volume:
-    size: 10Gi
-  numberOfInstances: 2
+    size:  {{ .Values.postgres.volume_size }}
+  numberOfInstances: {{ int .Values.postgres.number_instances_postgres }}
   resources:
     requests:
-      cpu: 250m
       memory: 512Mi
     limits:
       memory: 1Gi

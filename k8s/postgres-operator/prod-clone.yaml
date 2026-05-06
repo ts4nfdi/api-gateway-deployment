@@ -1,0 +1,25 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: ts4nfdi-api-gateway-postgres-clone
+  namespace: ts4nfdi
+  annotations:
+    "acid.zalan.do/controller": "ts4nfdi-operator"
+  labels:
+    project: ts4nfdi
+    app.kubernetes.io/instance: ts4nfdi-api-gateway-clone
+    app.kubernetes.io/part-of: ts4nfdi-gateway
+    app.kubernetes.io/component: db
+    app.kubernetes.io/managed-by: Helm
+spec:
+  teamId: ts4nfdi-api-gateway
+  numberOfInstances: 1
+  volume:
+    size: 1Gi
+  postgresql:
+    version: "14"
+  clone:
+    cluster: ts4nfdi-api-gateway-postgres
+    s3_endpoint: "https://s3.de-west-1.psmanaged.com"
+    s3_access_key_id: ""
+    s3_secret_access_key: ""
