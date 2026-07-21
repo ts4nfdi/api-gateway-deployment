@@ -57,6 +57,51 @@ spec:
                 secretKeyRef:
                   name: jwt-secret
                   key: JWT_SECRET
+            - name: OIDC_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: oidc-client-secret
+                  key: OIDC_CLIENT_SECRET
+            - name: OIDC_CLIENT_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: oidc-client-id
+                  key: OIDC_CLIENT_ID
+            - name: OIDC_AUTHORITY
+              valueFrom:
+                configMapKeyRef:
+                  name: oidc-authority
+                  key: OIDC_AUTHORITY
+            - name: OIDC_ISSUER
+              valueFrom:
+                configMapKeyRef:
+                  name: oidc-issuer
+                  key: OIDC_ISSUER
+            - name: OIDC_AUTHORIZATION_ENDPOINT
+              valueFrom:
+                configMapKeyRef:
+                  name: oidc-authorization-endpoint
+                  key: OIDC_AUTHORIZATION_ENDPOINT
+            - name: OIDC_TOKEN_ENDPOINT
+              valueFrom:
+                configMapKeyRef:
+                  name: oidc-token-endpoint
+                  key: OIDC_TOKEN_ENDPOINT
+            - name: OIDC_USERINFO_ENDPOINT
+              valueFrom:
+                configMapKeyRef:
+                  name: oidc-userinfo-endpoint
+                  key: OIDC_USERINFO_ENDPOINT
+            - name: OIDC_END_SESSION_ENDPOINT
+              valueFrom:
+                configMapKeyRef:
+                  name: oidc-end-session-endpoint
+                  key: OIDC_END_SESSION_ENDPOINT
+            - name: OIDC_JWK_SET_URI
+              valueFrom:
+                configMapKeyRef:
+                  name: oidc-jwk-set-uri
+                  key: OIDC_JWK_SET_URI
             - name: JAVA_TOOL_OPTIONS
               value: "-XX:InitialRAMPercentage=25 -XX:MaxRAMPercentage=70"
           ports:
