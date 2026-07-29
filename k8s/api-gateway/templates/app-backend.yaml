@@ -102,6 +102,21 @@ spec:
                 configMapKeyRef:
                   name: oidc-jwk-set-uri
                   key: OIDC_JWK_SET_URI
+            - name: MATOMO_ENABLED
+              valueFrom:
+                configMapKeyRef:
+                  name: matomo-enabled
+                  key: MATOMO_ENABLED
+            - name: MATOMO_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: matomo-url
+                  key: MATOMO_URL
+            - name: MATOMO_SITE_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: matomo-site-id
+                  key: MATOMO_SITE_ID
             - name: JAVA_TOOL_OPTIONS
               value: "-XX:InitialRAMPercentage=25 -XX:MaxRAMPercentage=70"
           ports:
