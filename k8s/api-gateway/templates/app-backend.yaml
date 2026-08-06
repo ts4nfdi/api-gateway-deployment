@@ -117,6 +117,36 @@ spec:
                 configMapKeyRef:
                   name: matomo-site-id
                   key: MATOMO_SITE_ID
+            - name: AGROPORTAL_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: agroportal-api-key
+                  key: AGROPORTAL_API_KEY
+            - name: EARTHPORTAL_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: earthportal-api-key
+                  key: EARTHPORTAL_API_KEY
+            - name: BIODIVPORTAL_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: biodivportal-api-key
+                  key: BIODIVPORTAL_API_KEY
+            - name: ECOPORTAL_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: ecoportal-api-key
+                  key: ECOPORTAL_API_KEY
+            - name: LOVPORTAL_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: lovportal-api-key
+                  key: LOVPORTAL_API_KEY
+            - name: BIOPORTAL_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: bioportal-api-key
+                  key: BIOPORTAL_API_KEY
             - name: JAVA_TOOL_OPTIONS
               value: "-XX:InitialRAMPercentage=25 -XX:MaxRAMPercentage=70"
           ports:
